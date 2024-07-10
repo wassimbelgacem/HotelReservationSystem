@@ -30,7 +30,7 @@ public class StaffFeedback extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private Staff staff = null;
@@ -58,10 +58,10 @@ public class StaffFeedback extends javax.swing.JFrame {
 
             switch (rating) {
                 case "Terrible" -> terribleCount++;
-                case "Poor" -> poorCount++;
-                case "Fair" -> fairCount++;
-                case "Good" -> goodCount++;
-                case "Awesome" -> awesomeCount++;
+                case "Pauvre" -> poorCount++;
+                case "Normal" -> fairCount++;
+                case "Bien" -> goodCount++;
+                case "Trés bien" -> awesomeCount++;
             }
         }
 
@@ -263,7 +263,7 @@ public class StaffFeedback extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        staffName.setText("Hello, " + staff.getFirstName());
+        staffName.setText("Bonjour, " + staff.getFirstName());
 
         headerPanel.setBackground(new java.awt.Color(216, 196, 156));
         headerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -297,7 +297,7 @@ public class StaffFeedback extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Username", "Rating", "Feedback", "Date Submitted"
+                "ID", "Username", "Notation", "Feedback", "Date "
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -338,7 +338,7 @@ public class StaffFeedback extends javax.swing.JFrame {
             e.printStackTrace();
         }
 
-        goodCheckBox.setText("Good");
+        goodCheckBox.setText("Bien");
         goodCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goodCheckBoxtypeComboBoxActionPerformed(evt);
@@ -352,21 +352,21 @@ public class StaffFeedback extends javax.swing.JFrame {
             }
         });
 
-        poorCheckBox.setText("Poor");
+        poorCheckBox.setText("Pauvre");
         poorCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 poorCheckBoxtypeComboBoxActionPerformed(evt);
             }
         });
 
-        fairCheckBox.setText("Fair");
+        fairCheckBox.setText("Normal");
         fairCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fairCheckBoxtypeComboBoxActionPerformed(evt);
             }
         });
 
-        awesomeCheckBox.setText("Awesome");
+        awesomeCheckBox.setText("Trés bien");
         awesomeCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 awesomeCheckBoxtypeComboBoxActionPerformed(evt);
@@ -398,13 +398,13 @@ public class StaffFeedback extends javax.swing.JFrame {
 
         jLabel2.setText("Terrible");
 
-        jLabel3.setText("Poor");
+        jLabel3.setText("Pauvre");
 
-        jLabel4.setText("Fair");
+        jLabel4.setText("Normal");
 
-        jLabel5.setText("Good");
+        jLabel5.setText("Bien");
 
-        jLabel6.setText("Awesome");
+        jLabel6.setText("Trés bien");
 
         javax.swing.GroupLayout lowerPanelLayout = new javax.swing.GroupLayout(lowerPanel);
         lowerPanel.setLayout(lowerPanelLayout);

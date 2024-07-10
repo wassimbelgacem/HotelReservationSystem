@@ -11,7 +11,7 @@ public class UserHome extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private Guest guest = null;
@@ -54,7 +54,7 @@ public class UserHome extends javax.swing.JFrame {
         roomsButton.setBackground(new java.awt.Color(88, 73, 16));
         roomsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         roomsButton.setForeground(new java.awt.Color(255, 255, 255));
-        roomsButton.setText("Rooms");
+        roomsButton.setText("Chambres");
         roomsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         roomsButton.setBorderPainted(false);
         roomsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +88,7 @@ public class UserHome extends javax.swing.JFrame {
         billsButton.setBackground(new java.awt.Color(88, 73, 16));
         billsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         billsButton.setForeground(new java.awt.Color(255, 255, 255));
-        billsButton.setText("Bills");
+        billsButton.setText("Factures");
         billsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         billsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,7 +99,7 @@ public class UserHome extends javax.swing.JFrame {
         logOutButton.setBackground(new java.awt.Color(88, 73, 16));
         logOutButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logOutButton.setText("Logout");
+        logOutButton.setText("Se déconnecter");
         logOutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,7 +149,7 @@ public class UserHome extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        guestName.setText("Hello, " + guest.getFirstName());
+        guestName.setText("Bonjour, " + guest.getFirstName());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/hotel-icon-corner.png"))); // NOI18N

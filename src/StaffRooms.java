@@ -25,7 +25,7 @@ public class StaffRooms extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private Staff staff = null;
@@ -85,7 +85,7 @@ public class StaffRooms extends javax.swing.JFrame {
         roomsButton.setBackground(new java.awt.Color(88, 73, 16));
         roomsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         roomsButton.setForeground(new java.awt.Color(255, 255, 255));
-        roomsButton.setText("Rooms");
+        roomsButton.setText("Chambres");
         roomsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         roomsButton.setBorderPainted(false);
         roomsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +119,7 @@ public class StaffRooms extends javax.swing.JFrame {
         logOutButton.setBackground(new java.awt.Color(88, 73, 16));
         logOutButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logOutButton.setText("Logout");
+        logOutButton.setText("Se déconnecter");
         logOutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +135,7 @@ public class StaffRooms extends javax.swing.JFrame {
         bookingsButton.setBackground(new java.awt.Color(88, 73, 16));
         bookingsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         bookingsButton.setForeground(new java.awt.Color(255, 255, 255));
-        bookingsButton.setText("Bookings");
+        bookingsButton.setText("Réservations");
         bookingsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bookingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +146,7 @@ public class StaffRooms extends javax.swing.JFrame {
         checkInsButtons.setBackground(new java.awt.Color(88, 73, 16));
         checkInsButtons.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         checkInsButtons.setForeground(new java.awt.Color(255, 255, 255));
-        checkInsButtons.setText("Check Ins");
+        checkInsButtons.setText("Enregistrements");
         checkInsButtons.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         checkInsButtons.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +157,7 @@ public class StaffRooms extends javax.swing.JFrame {
         billsButton.setBackground(new java.awt.Color(88, 73, 16));
         billsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         billsButton.setForeground(new java.awt.Color(255, 255, 255));
-        billsButton.setText("Bills");
+        billsButton.setText("Factures");
         billsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         billsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,7 +207,7 @@ public class StaffRooms extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        staffNameLabel.setText("Hello, " + staff.getFirstName());
+        staffNameLabel.setText("Bonjour, " + staff.getFirstName());
 
         headerPanel.setBackground(new java.awt.Color(216, 196, 156));
         headerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -215,7 +215,7 @@ public class StaffRooms extends javax.swing.JFrame {
         roomHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         roomHeaderLabel.setForeground(new java.awt.Color(88, 73, 16));
         roomHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        roomHeaderLabel.setText("ROOMS");
+        roomHeaderLabel.setText("Chambres");
 
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
@@ -241,7 +241,7 @@ public class StaffRooms extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Room Number", "Type", "Capacity", "Rate", "Status"
+                "Nombre chambre", "Nom Hotel ", "Capacité", "Cout", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -267,7 +267,7 @@ public class StaffRooms extends javax.swing.JFrame {
                 String rate = String.valueOf(resultSet.getDouble("rate"))+"0";
                 String status = resultSet.getString("status");
 
-                rate = "₱" + rate;
+                rate = rate;
 
                 String roomsTableData[] = {room_number, room_type, room_capacity, rate, status};
                 DefaultTableModel roomTableModel = (DefaultTableModel) roomsTable.getModel();
@@ -281,14 +281,14 @@ public class StaffRooms extends javax.swing.JFrame {
             e.printStackTrace();
         }
 
-        availableCheckBox.setText("Available");
+        availableCheckBox.setText("Disponible");
         availableCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 availableCheckBoxtypeComboBoxActionPerformed(evt);
             }
         });
 
-        typeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Studio", "Suite", "Deluxe" }));
+        typeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All" }));
         typeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeComboBoxActionPerformed(evt);
@@ -296,11 +296,11 @@ public class StaffRooms extends javax.swing.JFrame {
         });
 
         filtersLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        filtersLabel.setText("Filters:");
+        filtersLabel.setText("Filtres:");
 
-        roomTypeLabel.setText("Room Type:");
+        roomTypeLabel.setText("Hotel:");
 
-        setAvailableButton.setText("Set Available");
+        setAvailableButton.setText("Mettre diponisble");
         setAvailableButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setAvailableButtonActionPerformed(evt);
@@ -310,35 +310,35 @@ public class StaffRooms extends javax.swing.JFrame {
         notifLabel.setForeground(new java.awt.Color(255, 102, 102));
         notifLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        setUnavailableButton.setText("Set Unavailable");
+        setUnavailableButton.setText("Mettre indisponible");
         setUnavailableButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setUnavailableButtonActionPerformed(evt);
             }
         });
 
-        setUnderMaintenanceButton.setText("Set Under Maintenance");
+        setUnderMaintenanceButton.setText("Mettre sous Maintenance");
         setUnderMaintenanceButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setUnderMaintenanceButtonActionPerformed(evt);
             }
         });
 
-        unavailableCheckBox.setText("Unavailable");
+        unavailableCheckBox.setText("indisponible");
         unavailableCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unavailableCheckBoxtypeComboBoxActionPerformed(evt);
             }
         });
 
-        underMaintenanceCheckBox.setText("Under Maintenance");
+        underMaintenanceCheckBox.setText("Sous Maintenance");
         underMaintenanceCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 underMaintenanceCheckBoxtypeComboBoxActionPerformed(evt);
             }
         });
 
-        occupiedCheckBox.setText("Occupied");
+        occupiedCheckBox.setText("Occupée");
         occupiedCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 occupiedCheckBoxtypeComboBoxActionPerformed(evt);

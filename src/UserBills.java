@@ -24,7 +24,7 @@ public class UserBills extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private Guest guest = null;
@@ -71,7 +71,7 @@ public class UserBills extends javax.swing.JFrame {
         roomsButton.setBackground(new java.awt.Color(88, 73, 16));
         roomsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         roomsButton.setForeground(new java.awt.Color(255, 255, 255));
-        roomsButton.setText("Rooms");
+        roomsButton.setText("Chambres");
         roomsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         roomsButton.setBorderPainted(false);
         roomsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +105,7 @@ public class UserBills extends javax.swing.JFrame {
         billsButton.setBackground(new java.awt.Color(88, 73, 16));
         billsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         billsButton.setForeground(new java.awt.Color(255, 255, 255));
-        billsButton.setText("Bills");
+        billsButton.setText("Factures");
         billsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         billsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +116,7 @@ public class UserBills extends javax.swing.JFrame {
         logOutButton.setBackground(new java.awt.Color(88, 73, 16));
         logOutButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logOutButton.setText("Logout");
+        logOutButton.setText("Se déconnecter");
         logOutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,7 +166,7 @@ public class UserBills extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        guestName.setText("Hello, " + guest.getFirstName());
+        guestName.setText("Bonjour, " + guest.getFirstName());
 
         headerPanel.setBackground(new java.awt.Color(216, 196, 156));
         headerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -174,7 +174,7 @@ public class UserBills extends javax.swing.JFrame {
         roomHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         roomHeaderLabel.setForeground(new java.awt.Color(88, 73, 16));
         roomHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        roomHeaderLabel.setText("BILLS");
+        roomHeaderLabel.setText("Factures");
 
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
@@ -200,7 +200,7 @@ public class UserBills extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Bill ID", "Stay Cost", "Services Cost", "Total Cost", "Status"
+                "Facture ID", "Cout séjour", "Cout Services ", "Cout Total ", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -226,9 +226,9 @@ public class UserBills extends javax.swing.JFrame {
                 String total_cost = resultSet.getString("total_cost");
                 String status = resultSet.getString("status");
 
-                stay_cost = "₱" + stay_cost;
-                services_cost = "₱" + services_cost;
-                total_cost = "₱" + total_cost;
+                stay_cost = stay_cost;
+                services_cost = services_cost;
+                total_cost =  total_cost;
 
                 String billsTableData[] = {bill_id, stay_cost, services_cost, total_cost, status};
                 DefaultTableModel billsTableModel = (DefaultTableModel) billsTable.getModel();
@@ -255,7 +255,7 @@ public class UserBills extends javax.swing.JFrame {
             roomsLowerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roomsLowerPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                .addComponent(jScrollPane3)
                 .addContainerGap())
         );
 

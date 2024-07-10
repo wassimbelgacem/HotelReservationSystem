@@ -18,7 +18,7 @@ public class Register extends javax.swing.JFrame {
     
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     public Register() {
@@ -57,7 +57,6 @@ public class Register extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Register - Payter Hotel");
-        setPreferredSize(new java.awt.Dimension(872, 559));
         setResizable(false);
         setSize(new java.awt.Dimension(872, 559));
 
@@ -98,7 +97,7 @@ public class Register extends javax.swing.JFrame {
         registerButton.setBackground(new java.awt.Color(80, 60, 19));
         registerButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         registerButton.setForeground(new java.awt.Color(255, 255, 255));
-        registerButton.setText("Register");
+        registerButton.setText("Enregistrer");
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerButtonActionPerformed(evt);
@@ -108,7 +107,7 @@ public class Register extends javax.swing.JFrame {
         goBackButton.setBackground(new java.awt.Color(80, 60, 19));
         goBackButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         goBackButton.setForeground(new java.awt.Color(255, 255, 255));
-        goBackButton.setText("Go Back");
+        goBackButton.setText("Retourner");
         goBackButton.setBorderPainted(false);
         goBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,11 +115,11 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        fNameLabel.setText("First Name:");
+        fNameLabel.setText("Prenom :");
 
         phoneNoLabel.setText("Phone #:");
 
-        lNameLabel.setText("Last Name:");
+        lNameLabel.setText("Nom :");
 
         passLabel.setText("Password");
 
@@ -137,7 +136,7 @@ public class Register extends javax.swing.JFrame {
 
         loginHeaderLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         loginHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loginHeaderLabel.setText("REGISTER");
+        loginHeaderLabel.setText("S'inscrire maintenant");
 
         passwordPasswordField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         passwordPasswordField.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +145,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        confPasswordLabel.setText("Confirm Password:");
+        confPasswordLabel.setText("Confirmer Password:");
 
         emailTextField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         emailTextField.addActionListener(new java.awt.event.ActionListener() {

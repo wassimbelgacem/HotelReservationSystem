@@ -123,7 +123,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rooms"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Chambres&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -190,7 +192,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Bills"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Factures&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -212,7 +216,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Logout"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Se d&#xe9;connecter&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -235,7 +241,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="guestName.setText(&quot;Hello, &quot; + guest.getFirstName());"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="guestName.setText(&quot;Bonjour, &quot; + guest.getFirstName());"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -282,7 +288,9 @@
               <Color blue="10" green="49" red="58" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="BILLS"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Factures&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>
@@ -310,7 +318,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane3" pref="449" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -326,14 +334,8 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="billsTable">
               <Properties>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="0">
-                    <Column editable="false" title="Bill ID" type="java.lang.Object"/>
-                    <Column editable="false" title="Stay Cost" type="java.lang.Object"/>
-                    <Column editable="false" title="Services Cost" type="java.lang.Object"/>
-                    <Column editable="false" title="Total Cost" type="java.lang.Object"/>
-                    <Column editable="false" title="Status" type="java.lang.Object"/>
-                  </Table>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;&#xa;    },&#xa;    new String [] {&#xa;        &quot;Facture ID&quot;, &quot;Cout s&#xe9;jour&quot;, &quot;Cout Services &quot;, &quot;Cout Total &quot;, &quot;Status&quot;&#xa;    }&#xa;) {&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false&#xa;    };&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
@@ -370,7 +372,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="try (Connection connection = hotelDBM.getDatabaseConnection();&#xa;    PreparedStatement preparedStatement = connection.prepareStatement(&quot;SELECT bill.* FROM bill INNER JOIN check_in ON bill.checkin_id = check_in.checkin_id INNER JOIN booking ON check_in.booking_id = booking.booking_id INNER JOIN guest ON booking.guest_id = guest.guest_id where guest.guest_id=&quot;+guest.getGuestID())) {&#xa;&#xa;    ResultSet resultSet = preparedStatement.executeQuery();&#xa;&#xa;    while (resultSet.next()) {&#xa;        String bill_id = String.valueOf(resultSet.getInt(&quot;bill_id&quot;));&#xa;        String stay_cost = resultSet.getString(&quot;stay_cost&quot;);&#xa;        String services_cost = resultSet.getString(&quot;services_cost&quot;);&#xa;        String total_cost = resultSet.getString(&quot;total_cost&quot;);&#xa;        String status = resultSet.getString(&quot;status&quot;);&#xa;&#xa;        stay_cost = &quot;&#x20b1;&quot; + stay_cost;&#xa;        services_cost = &quot;&#x20b1;&quot; + services_cost;&#xa;        total_cost = &quot;&#x20b1;&quot; + total_cost;&#xa;&#xa;        String billsTableData[] = {bill_id, stay_cost, services_cost, total_cost, status};&#xa;        DefaultTableModel billsTableModel = (DefaultTableModel) billsTable.getModel();&#xa;&#xa;        billsTableModel.addRow(billsTableData);&#xa;    }&#xa;&#xa;    preparedStatement.close();&#xa;} &#xa;catch (SQLException e) {&#xa;        e.printStackTrace();&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="try (Connection connection = hotelDBM.getDatabaseConnection();&#xa;    PreparedStatement preparedStatement = connection.prepareStatement(&quot;SELECT bill.* FROM bill INNER JOIN check_in ON bill.checkin_id = check_in.checkin_id INNER JOIN booking ON check_in.booking_id = booking.booking_id INNER JOIN guest ON booking.guest_id = guest.guest_id where guest.guest_id=&quot;+guest.getGuestID())) {&#xa;&#xa;    ResultSet resultSet = preparedStatement.executeQuery();&#xa;&#xa;    while (resultSet.next()) {&#xa;        String bill_id = String.valueOf(resultSet.getInt(&quot;bill_id&quot;));&#xa;        String stay_cost = resultSet.getString(&quot;stay_cost&quot;);&#xa;        String services_cost = resultSet.getString(&quot;services_cost&quot;);&#xa;        String total_cost = resultSet.getString(&quot;total_cost&quot;);&#xa;        String status = resultSet.getString(&quot;status&quot;);&#xa;&#xa;        stay_cost = stay_cost;&#xa;        services_cost = services_cost;&#xa;        total_cost =  total_cost;&#xa;&#xa;        String billsTableData[] = {bill_id, stay_cost, services_cost, total_cost, status};&#xa;        DefaultTableModel billsTableModel = (DefaultTableModel) billsTable.getModel();&#xa;&#xa;        billsTableModel.addRow(billsTableData);&#xa;    }&#xa;&#xa;    preparedStatement.close();&#xa;} &#xa;catch (SQLException e) {&#xa;        e.printStackTrace();&#xa;}"/>
               </AuxValues>
             </Component>
           </SubComponents>

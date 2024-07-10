@@ -15,7 +15,7 @@ public class UserRequestService extends javax.swing.JDialog {
     
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private Guest guest = null;
@@ -52,7 +52,7 @@ public class UserRequestService extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jButton1.setText("Confirm Request");
+        jButton1.setText("Confirmer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -60,12 +60,12 @@ public class UserRequestService extends javax.swing.JDialog {
         });
 
         roomNumberLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        roomNumberLabel.setText("Room Number:");
+        roomNumberLabel.setText("Nombre Chambre:");
 
         chooseServiceLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        chooseServiceLabel.setText("Choose Service:");
+        chooseServiceLabel.setText("Choix Service:");
 
-        serviceTypesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"WIFI Access", "Laundry and Dry Cleaning", "Entertainment Services", "Snacks and Drinks", "Housekeeping"}));
+        serviceTypesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Accés WIFI", "Blanchisserie et nettoyage à sec", "Services de divertissement", "Collations et boissons", "Entretien ménager"}));
         serviceTypesComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 serviceTypesComboBoxItemStateChanged(evt);
@@ -78,7 +78,7 @@ public class UserRequestService extends javax.swing.JDialog {
         costLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         costLabel.setText("Cost:");
 
-        costLowerLabel.setText("₱250.00");
+        costLowerLabel.setText("250.00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,7 +93,7 @@ public class UserRequestService extends javax.swing.JDialog {
                         .addComponent(chooseServiceLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(serviceTypesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 158, Short.MAX_VALUE))
+                        .addGap(0, 190, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(costLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -137,19 +137,19 @@ public class UserRequestService extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int service_id = 0;
         
-        if("WIFI Access".equals(serviceTypesComboBox.getSelectedItem().toString())){
+        if("Accés WIFI".equals(serviceTypesComboBox.getSelectedItem().toString())){
             service_id=1;
         }
-        else if("Laundry and Dry Cleaning".equals(serviceTypesComboBox.getSelectedItem().toString())){
+        else if("Blanchisserie et nettoyage à sec".equals(serviceTypesComboBox.getSelectedItem().toString())){
             service_id=2;
         }
-        else if("Entertainment Services".equals(serviceTypesComboBox.getSelectedItem().toString())){
+        else if("Services de divertissement".equals(serviceTypesComboBox.getSelectedItem().toString())){
             service_id=3;
         }
-        else if("Snacks and Drinks".equals(serviceTypesComboBox.getSelectedItem().toString())){
+        else if("Collations et boissons".equals(serviceTypesComboBox.getSelectedItem().toString())){
             service_id=4;
         }
-        else if("Housekeeping".equals(serviceTypesComboBox.getSelectedItem().toString())){
+        else if("Entretien ménager".equals(serviceTypesComboBox.getSelectedItem().toString())){
             service_id=5;
         }
         
@@ -167,20 +167,20 @@ public class UserRequestService extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void serviceTypesComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_serviceTypesComboBoxItemStateChanged
-        if("WIFI Access".equals(serviceTypesComboBox.getSelectedItem().toString())){
-            costLowerLabel.setText("₱250.00");
+        if("Accés WIFI".equals(serviceTypesComboBox.getSelectedItem().toString())){
+            costLowerLabel.setText("250.00");
         }
-        else if("Laundry and Dry Cleaning".equals(serviceTypesComboBox.getSelectedItem().toString())){
-            costLowerLabel.setText("₱150.00");
+        else if("Blanchisserie et nettoyage à sec".equals(serviceTypesComboBox.getSelectedItem().toString())){
+            costLowerLabel.setText("150.00");
         }
-        else if("Entertainment Services".equals(serviceTypesComboBox.getSelectedItem().toString())){
-            costLowerLabel.setText("₱200.00");
+        else if("Services de divertissement".equals(serviceTypesComboBox.getSelectedItem().toString())){
+            costLowerLabel.setText("200.00");
         }
-        else if("Snacks and Drinks".equals(serviceTypesComboBox.getSelectedItem().toString())){
-            costLowerLabel.setText("₱100.00");
+        else if("Collations et boissons".equals(serviceTypesComboBox.getSelectedItem().toString())){
+            costLowerLabel.setText("100.00");
         }
-        else if("Housekeeping".equals(serviceTypesComboBox.getSelectedItem().toString())){
-            costLowerLabel.setText("₱300.00");
+        else if("Entretien ménager".equals(serviceTypesComboBox.getSelectedItem().toString())){
+            costLowerLabel.setText("300.00");
         }
     }//GEN-LAST:event_serviceTypesComboBoxItemStateChanged
 

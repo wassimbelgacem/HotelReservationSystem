@@ -162,11 +162,11 @@ CREATE TABLE `service` (
 --
 
 INSERT INTO `service` (`service_id`, `service_type`, `cost`) VALUES
-(1, 'WIFI Access', 250.00),
-(2, 'Laundry and Dry Cleaning', 150.00),
-(3, 'Entertainment Services', 200.00),
-(4, 'Snacks and Drinks', 100.00),
-(5, 'Housekeeping', 300.00);
+(1, 'Accés WIFI', 250.00),
+(2, 'Blanchisserie et nettoyage à sec', 150.00),
+(3, 'Services de divertissement', 200.00),
+(4, 'Collations et boissons', 100.00),
+(5, 'Entretien ménager', 300.00);
 
 -- --------------------------------------------------------
 

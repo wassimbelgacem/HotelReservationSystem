@@ -16,7 +16,7 @@ public class UserBookRoom extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private Guest guest = null;
@@ -98,7 +98,7 @@ public class UserBookRoom extends javax.swing.JFrame {
         roomsButton.setBackground(new java.awt.Color(88, 73, 16));
         roomsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         roomsButton.setForeground(new java.awt.Color(255, 255, 255));
-        roomsButton.setText("Rooms");
+        roomsButton.setText("Chambres");
         roomsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         roomsButton.setBorderPainted(false);
         roomsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +132,7 @@ public class UserBookRoom extends javax.swing.JFrame {
         billsButton.setBackground(new java.awt.Color(88, 73, 16));
         billsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         billsButton.setForeground(new java.awt.Color(255, 255, 255));
-        billsButton.setText("Bills");
+        billsButton.setText("Factures");
         billsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         billsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +143,7 @@ public class UserBookRoom extends javax.swing.JFrame {
         logOutButton.setBackground(new java.awt.Color(88, 73, 16));
         logOutButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logOutButton.setText("Logout");
+        logOutButton.setText("Se déconnecter");
         logOutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,7 +193,7 @@ public class UserBookRoom extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        guestName.setText("Hello, " + guest.getFirstName());
+        guestName.setText("Bonjour, " + guest.getFirstName());
 
         headerPanel.setBackground(new java.awt.Color(216, 196, 156));
         headerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -223,12 +223,18 @@ public class UserBookRoom extends javax.swing.JFrame {
         lowerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         roomPicLabel.setIcon(
-            room.getRoomType().equals("Studio") ?
-            new javax.swing.ImageIcon(getClass().getResource("/assets/studio.png")) :
-            room.getRoomType().equals("Suite") ?
-            new javax.swing.ImageIcon(getClass().getResource("/assets/suite.png")) :
-            room.getRoomType().equals("Deluxe") ?
+            room.getRoomType().equals("El Mouradi Gammarth") ?
             new javax.swing.ImageIcon(getClass().getResource("/assets/deluxe.png")) :
+            room.getRoomType().equals("Mövenpick Hotel Gammarth Tunis") ?
+            new javax.swing.ImageIcon(getClass().getResource("/assets/studio.png")) :
+            room.getRoomType().equals("Gafsa Palace") ?
+            new javax.swing.ImageIcon(getClass().getResource("/assets/suite.png")) :
+            room.getRoomType().equals("jugurtha palace ") ?
+            new javax.swing.ImageIcon(getClass().getResource("/assets/deluxe.png")) :
+            room.getRoomType().equals("Sheraton Tunis Hotel") ?
+            new javax.swing.ImageIcon(getClass().getResource("/assets/studio.png")) :
+            room.getRoomType().equals("Tunis Marriott Hotel") ?
+            new javax.swing.ImageIcon(getClass().getResource("/assets/suite.png")) :
             null
         );
         roomPicLabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -238,16 +244,16 @@ public class UserBookRoom extends javax.swing.JFrame {
         roomPicLabel.setRequestFocusEnabled(false);
 
         roomNumberTopLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        roomNumberTopLabel.setText("Room Number:");
+        roomNumberTopLabel.setText("Nombre chambre:");
 
         roomTypeTopLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        roomTypeTopLabel.setText("Room Type:");
+        roomTypeTopLabel.setText("Hotel name :");
 
         roomCapTopLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        roomCapTopLabel.setText("Room Capacity:");
+        roomCapTopLabel.setText("Capacité:");
 
         rateTopLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        rateTopLabel.setText("Rate:");
+        rateTopLabel.setText("Cout:");
 
         statusTopLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         statusTopLabel.setText("Status:");
@@ -262,32 +268,32 @@ public class UserBookRoom extends javax.swing.JFrame {
         roomCapacityLabel.setText(String.valueOf(room.getRoomCapacity()));
 
         rateLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        rateLabel.setText("₱ " + String.valueOf(room.getRate()) + "0");
+        rateLabel.setText(String.valueOf(room.getRate()) + "0");
 
         statusLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         statusLabel.setText(room.getStatus());
 
-        goBackButton.setText("Go Back");
+        goBackButton.setText("Retourner");
         goBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goBackButtonActionPerformed(evt);
             }
         });
 
-        bookRoomButton.setText("Confirm Book");
+        bookRoomButton.setText("Confirmer Réservation");
         bookRoomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bookRoomButtonActionPerformed(evt);
             }
         });
 
-        checkInLabel.setText("Check in:");
+        checkInLabel.setText("Entrée:");
 
-        checkOutLabel.setText("Check out:");
+        checkOutLabel.setText("Sortie:");
 
-        durationHLabel.setText("Duration");
+        durationHLabel.setText("Durée");
 
-        totalCostHLabel.setText("Total Cost:");
+        totalCostHLabel.setText("Cout Total:");
 
         notifLabel.setForeground(new java.awt.Color(255, 102, 102));
         notifLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -342,7 +348,7 @@ public class UserBookRoom extends javax.swing.JFrame {
                                     .addGroup(lowerPanelLayout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addComponent(statusLabel1)))))
-                        .addGap(0, 59, Short.MAX_VALUE))
+                        .addGap(0, 67, Short.MAX_VALUE))
                     .addGroup(lowerPanelLayout.createSequentialGroup()
                         .addGroup(lowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(bookRoomButton, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
@@ -437,7 +443,7 @@ public class UserBookRoom extends javax.swing.JFrame {
         String checkInDateString = dateFormat.format(checkInDate);
         checkInDateLabel1.setText(checkInDateString);
         durationLabel.setText(String.valueOf(duration) + " Day(s)");
-        totalCostLabel.setText("₱" + this.totalCost+ "0");
+        totalCostLabel.setText("Dinars " + this.totalCost+ "0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -225,7 +225,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="staffName.setText(&quot;Hello, &quot; + staff.getFirstName());"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="staffName.setText(&quot;Bonjour, &quot; + staff.getFirstName());"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="bookingsButton">
@@ -465,14 +465,8 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="feedbacksTable">
               <Properties>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="0">
-                    <Column editable="false" title="ID" type="java.lang.Object"/>
-                    <Column editable="false" title="Username" type="java.lang.Object"/>
-                    <Column editable="false" title="Rating" type="java.lang.Object"/>
-                    <Column editable="false" title="Feedback" type="java.lang.Object"/>
-                    <Column editable="false" title="Date Submitted" type="java.lang.Object"/>
-                  </Table>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;&#xa;    },&#xa;    new String [] {&#xa;        &quot;ID&quot;, &quot;Username&quot;, &quot;Notation&quot;, &quot;Feedback&quot;, &quot;Date &quot;&#xa;    }&#xa;) {&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false&#xa;    };&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
@@ -516,7 +510,9 @@
         </Container>
         <Component class="javax.swing.JCheckBox" name="goodCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Good"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Bien&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goodCheckBoxtypeComboBoxActionPerformed"/>
@@ -532,7 +528,9 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="poorCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Poor"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Pauvre&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="poorCheckBoxtypeComboBoxActionPerformed"/>
@@ -540,7 +538,9 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="fairCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fair"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Normal&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fairCheckBoxtypeComboBoxActionPerformed"/>
@@ -548,7 +548,9 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="awesomeCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Awesome"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Tr&#xe9;s bien&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="awesomeCheckBoxtypeComboBoxActionPerformed"/>
@@ -612,22 +614,30 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Poor"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Pauvre&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fair"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Normal&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Good"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Bien&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Awesome"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Tr&#xe9;s bien&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>

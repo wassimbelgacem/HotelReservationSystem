@@ -122,7 +122,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rooms"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Chambres&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -189,7 +191,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Bills"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Factures&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -211,7 +215,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Logout"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Se d&#xe9;connecter&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -234,7 +240,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="guestName.setText(&quot;Hello, &quot; + guest.getFirstName());"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="guestName.setText(&quot;Bonjour, &quot; + guest.getFirstName());"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -353,7 +359,7 @@
                           <Component id="statusLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="65" max="32767" attributes="0"/>
+                  <EmptySpace pref="73" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -417,7 +423,7 @@
         <Component class="javax.swing.JLabel" name="roomPicLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&#xa;    room.getRoomType().equals(&quot;Studio&quot;) ?&#xa;        new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/studio.png&quot;)) :&#xa;    room.getRoomType().equals(&quot;Suite&quot;) ?&#xa;        new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/suite.png&quot;)) :&#xa;    room.getRoomType().equals(&quot;Deluxe&quot;) ?&#xa;        new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/deluxe.png&quot;)) :&#xa;    null&#xa;" type="code"/>
+              <Connection code="&#xa;    room.getRoomType().equals(&quot;El Mouradi Gammarth&quot;) ?&#xa;    new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/deluxe.png&quot;)) :&#xa;    room.getRoomType().equals(&quot;M&#xf6;venpick Hotel Gammarth Tunis&quot;) ?&#xa;    new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/studio.png&quot;)) :&#xa;    room.getRoomType().equals(&quot;Gafsa Palace&quot;) ?&#xa;    new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/suite.png&quot;)) :&#xa;    room.getRoomType().equals(&quot;jugurtha palace &quot;) ?&#xa;    new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/deluxe.png&quot;)) :&#xa;    room.getRoomType().equals(&quot;Sheraton Tunis Hotel&quot;) ?&#xa;    new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/studio.png&quot;)) :&#xa;    room.getRoomType().equals(&quot;Tunis Marriott Hotel&quot;) ?&#xa;    new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/suite.png&quot;)) :&#xa;    null&#xa;    " type="code"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -441,7 +447,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Room Number:"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Numbre chambre:&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="roomTypeTopLabel">
@@ -449,7 +457,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Room Type:"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Hotel name :&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="roomCapTopLabel">
@@ -457,7 +467,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Room Capacity:"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Capacit&#xe9;:&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="rateTopLabel">
@@ -465,7 +477,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rate:"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Cout:&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="statusTopLabel">
@@ -512,7 +526,7 @@
               <Font name="Times New Roman" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;&#x20b1; &quot; + String.valueOf(room.getRate()) + &quot;0&quot;" type="code"/>
+              <Connection code="String.valueOf(room.getRate()) + &quot;0&quot;" type="code"/>
             </Property>
           </Properties>
         </Component>
@@ -528,7 +542,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="goBackButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Go Back"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Retourner&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goBackButtonActionPerformed"/>
@@ -536,7 +552,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="bookRoomButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Book Room"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;R&#xe9;server chambre&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bookRoomButtonActionPerformed"/>
@@ -557,12 +575,16 @@
         </Component>
         <Component class="javax.swing.JLabel" name="checkInLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Check in:"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Entr&#xe9;&#xe9;:&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="checkOutLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Check out:"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Sortie:&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="notifLabel">

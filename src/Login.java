@@ -11,7 +11,7 @@ public class Login extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     /**
@@ -54,7 +54,7 @@ public class Login extends javax.swing.JFrame {
         logInButton.setBackground(new java.awt.Color(80, 60, 19));
         logInButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         logInButton.setForeground(new java.awt.Color(255, 255, 255));
-        logInButton.setText("Login");
+        logInButton.setText("SE CONNECTER");
         logInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logInButtonActionPerformed(evt);
@@ -64,7 +64,7 @@ public class Login extends javax.swing.JFrame {
         signUpButton.setBackground(new java.awt.Color(80, 60, 19));
         signUpButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         signUpButton.setForeground(new java.awt.Color(255, 255, 255));
-        signUpButton.setText("Sign Up");
+        signUpButton.setText("S'inscrire");
         signUpButton.setToolTipText("");
         signUpButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         signUpButton.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +99,7 @@ public class Login extends javax.swing.JFrame {
 
         loginHeaderLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         loginHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loginHeaderLabel.setText("SIGN IN");
+        loginHeaderLabel.setText("SE CONNECTER");
 
         notifLabel.setForeground(new java.awt.Color(255, 51, 51));
         notifLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -26,7 +26,7 @@ public class StaffServices extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private Staff staff = null;
@@ -78,7 +78,7 @@ public class StaffServices extends javax.swing.JFrame {
         roomsButton.setBackground(new java.awt.Color(88, 73, 16));
         roomsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         roomsButton.setForeground(new java.awt.Color(255, 255, 255));
-        roomsButton.setText("Rooms");
+        roomsButton.setText("Chambres");
         roomsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         roomsButton.setBorderPainted(false);
         roomsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +112,7 @@ public class StaffServices extends javax.swing.JFrame {
         logOutButton.setBackground(new java.awt.Color(88, 73, 16));
         logOutButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logOutButton.setText("Logout");
+        logOutButton.setText("Se déconnecter");
         logOutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +128,7 @@ public class StaffServices extends javax.swing.JFrame {
         bookingsButton.setBackground(new java.awt.Color(88, 73, 16));
         bookingsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         bookingsButton.setForeground(new java.awt.Color(255, 255, 255));
-        bookingsButton.setText("Bookings");
+        bookingsButton.setText("Réservations");
         bookingsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bookingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +139,7 @@ public class StaffServices extends javax.swing.JFrame {
         checkInsButtons.setBackground(new java.awt.Color(88, 73, 16));
         checkInsButtons.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         checkInsButtons.setForeground(new java.awt.Color(255, 255, 255));
-        checkInsButtons.setText("Check Ins");
+        checkInsButtons.setText("Enregistrements");
         checkInsButtons.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         checkInsButtons.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +150,7 @@ public class StaffServices extends javax.swing.JFrame {
         billsButton.setBackground(new java.awt.Color(88, 73, 16));
         billsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         billsButton.setForeground(new java.awt.Color(255, 255, 255));
-        billsButton.setText("Bills");
+        billsButton.setText("Factures");
         billsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         billsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +200,7 @@ public class StaffServices extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        staffNameLabel.setText("Hello, " + staff.getFirstName());
+        staffNameLabel.setText("Bonjour, " + staff.getFirstName());
 
         headerPanel.setBackground(new java.awt.Color(216, 196, 156));
         headerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -208,7 +208,7 @@ public class StaffServices extends javax.swing.JFrame {
         roomHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         roomHeaderLabel.setForeground(new java.awt.Color(88, 73, 16));
         roomHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        roomHeaderLabel.setText("SERVICE REQUESTS");
+        roomHeaderLabel.setText("SERVICES");
 
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
@@ -234,7 +234,7 @@ public class StaffServices extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Request ID", "Guest", "Room No.", "Service Type", "Status", "Cost"
+                "Service ID", "Invitée", "Chambre No.", "Type Service", "Status", "Cout"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -261,7 +261,7 @@ public class StaffServices extends javax.swing.JFrame {
                 String status = resultSet.getString("status");
                 String cost = resultSet.getString("cost");
 
-                cost = "₱" + cost +"0";
+                cost = cost +"0";
 
                 String requestsTableData[] = {request_id, guest_name, room_number, service_type, status, cost};
                 DefaultTableModel requestsTableModel = (DefaultTableModel) requestsTable.getModel();

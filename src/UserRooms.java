@@ -24,7 +24,7 @@ public class UserRooms extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private Guest guest = null;
@@ -77,7 +77,7 @@ public class UserRooms extends javax.swing.JFrame {
         roomsButton.setBackground(new java.awt.Color(88, 73, 16));
         roomsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         roomsButton.setForeground(new java.awt.Color(255, 255, 255));
-        roomsButton.setText("Rooms");
+        roomsButton.setText("Chambres");
         roomsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         roomsButton.setBorderPainted(false);
         roomsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class UserRooms extends javax.swing.JFrame {
         billsButton.setBackground(new java.awt.Color(88, 73, 16));
         billsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         billsButton.setForeground(new java.awt.Color(255, 255, 255));
-        billsButton.setText("Bills");
+        billsButton.setText("Factures");
         billsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         billsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +122,7 @@ public class UserRooms extends javax.swing.JFrame {
         logOutButton.setBackground(new java.awt.Color(88, 73, 16));
         logOutButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logOutButton.setText("Logout");
+        logOutButton.setText("Se déconnecter");
         logOutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +172,7 @@ public class UserRooms extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        guestName.setText("Hello, " + guest.getFirstName());
+        guestName.setText("Bonjour, " + guest.getFirstName());
 
         headerPanel.setBackground(new java.awt.Color(216, 196, 156));
         headerPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -180,7 +180,7 @@ public class UserRooms extends javax.swing.JFrame {
         roomHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         roomHeaderLabel.setForeground(new java.awt.Color(88, 73, 16));
         roomHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        roomHeaderLabel.setText("ROOMS");
+        roomHeaderLabel.setText("Chambres");
 
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
@@ -206,7 +206,7 @@ public class UserRooms extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Room Number", "Type", "Capacity", "Rate", "Status"
+                "Nombre chambre", "Nom Hotel", "Capacité", "Cout", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -232,7 +232,7 @@ public class UserRooms extends javax.swing.JFrame {
                 String rate = String.valueOf(resultSet.getDouble("rate"))+"0";
                 String status = resultSet.getString("status");
 
-                rate = "₱" + rate;
+                rate = rate;
 
                 String roomsTableData[] = {room_number, room_type, room_capacity, rate, status};
                 DefaultTableModel roomTableModel = (DefaultTableModel) roomsTable.getModel();
@@ -246,14 +246,14 @@ public class UserRooms extends javax.swing.JFrame {
             e.printStackTrace();
         }
 
-        availableCheckBox.setText("Available");
+        availableCheckBox.setText("Disponible");
         availableCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeComboBoxActionPerformed(evt);
             }
         });
 
-        typeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Studio", "Suite", "Deluxe" }));
+        typeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All"}));
         typeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeComboBoxActionPerformed(evt);
@@ -261,11 +261,11 @@ public class UserRooms extends javax.swing.JFrame {
         });
 
         filtersLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        filtersLabel.setText("Filters:");
+        filtersLabel.setText("Filtres:");
 
-        roomTypeLabel.setText("Room Type:");
+        roomTypeLabel.setText("Hotel:");
 
-        viewRoomButton.setText("View Room");
+        viewRoomButton.setText("Voir Chambre");
         viewRoomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewRoomButtonActionPerformed(evt);
@@ -312,7 +312,7 @@ public class UserRooms extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(notifLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(viewRoomButton, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                .addComponent(viewRoomButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -387,7 +387,7 @@ public class UserRooms extends javax.swing.JFrame {
             String tempRate = roomsTable.getValueAt(selectedRowIndex, 3).toString();
             String status = roomsTable.getValueAt(selectedRowIndex, 4).toString();
             
-            double rate = Double.parseDouble(tempRate.replace("₱", ""));
+            double rate = Double.parseDouble(tempRate.replace("", ""));
         
             Room room = new Room(Integer.parseInt(roomNumber), roomType, Integer.parseInt(roomCapacity), rate, status);
             

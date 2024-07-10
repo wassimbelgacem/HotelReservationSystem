@@ -127,7 +127,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rooms"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Chambres&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -194,7 +196,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Logout"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Se d&#xe9;connecter&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -217,7 +221,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="staffNameLabel.setText(&quot;Hello, &quot; + staff.getFirstName());"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="staffNameLabel.setText(&quot;Bonjour, &quot; + staff.getFirstName());"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="bookingsButton">
@@ -231,7 +235,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Bookings"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;R&#xe9;servations&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -253,7 +259,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Check Ins"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Enregistrements&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -275,7 +283,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Bills"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Factures&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -330,7 +340,9 @@
               <Color blue="10" green="49" red="58" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="ROOMS"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Chambres&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>
@@ -421,14 +433,8 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="roomsTable">
               <Properties>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="0">
-                    <Column editable="false" title="Room Number" type="java.lang.Object"/>
-                    <Column editable="false" title="Type" type="java.lang.Object"/>
-                    <Column editable="false" title="Capacity" type="java.lang.Object"/>
-                    <Column editable="false" title="Rate" type="java.lang.Object"/>
-                    <Column editable="false" title="Status" type="java.lang.Object"/>
-                  </Table>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;&#xa;    },&#xa;    new String [] {&#xa;        &quot;Nombre chambre&quot;, &quot;Nom Hotel &quot;, &quot;Capacit&#xe9;&quot;, &quot;Cout&quot;, &quot;Status&quot;&#xa;    }&#xa;) {&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false&#xa;    };&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
@@ -465,14 +471,16 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="try (Connection connection = hotelDBM.getDatabaseConnection();&#xa;    PreparedStatement preparedStatement = connection.prepareStatement(&quot;SELECT * FROM room&quot;)) {&#xa;&#xa;    ResultSet resultSet = preparedStatement.executeQuery();&#xa;&#xa;    while (resultSet.next()) {&#xa;        String room_number = String.valueOf(resultSet.getInt(&quot;room_number&quot;));&#xa;        String room_type = resultSet.getString(&quot;room_type&quot;);&#xa;        String room_capacity = String.valueOf(resultSet.getInt(&quot;room_capacity&quot;));&#xa;        String rate = String.valueOf(resultSet.getDouble(&quot;rate&quot;))+&quot;0&quot;;&#xa;        String status = resultSet.getString(&quot;status&quot;);&#xa;&#xa;        rate = &quot;&#x20b1;&quot; + rate;&#xa;&#xa;        String roomsTableData[] = {room_number, room_type, room_capacity, rate, status};&#xa;        DefaultTableModel roomTableModel = (DefaultTableModel) roomsTable.getModel();&#xa;&#xa;        roomTableModel.addRow(roomsTableData);&#xa;    }&#xa;&#xa;    preparedStatement.close();&#xa;} &#xa;catch (SQLException e) {&#xa;        e.printStackTrace();&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="try (Connection connection = hotelDBM.getDatabaseConnection();&#xa;    PreparedStatement preparedStatement = connection.prepareStatement(&quot;SELECT * FROM room&quot;)) {&#xa;&#xa;    ResultSet resultSet = preparedStatement.executeQuery();&#xa;&#xa;    while (resultSet.next()) {&#xa;        String room_number = String.valueOf(resultSet.getInt(&quot;room_number&quot;));&#xa;        String room_type = resultSet.getString(&quot;room_type&quot;);&#xa;        String room_capacity = String.valueOf(resultSet.getInt(&quot;room_capacity&quot;));&#xa;        String rate = String.valueOf(resultSet.getDouble(&quot;rate&quot;))+&quot;0&quot;;&#xa;        String status = resultSet.getString(&quot;status&quot;);&#xa;&#xa;        rate = rate;&#xa;&#xa;        String roomsTableData[] = {room_number, room_type, room_capacity, rate, status};&#xa;        DefaultTableModel roomTableModel = (DefaultTableModel) roomsTable.getModel();&#xa;&#xa;        roomTableModel.addRow(roomsTableData);&#xa;    }&#xa;&#xa;    preparedStatement.close();&#xa;} &#xa;catch (SQLException e) {&#xa;        e.printStackTrace();&#xa;}"/>
               </AuxValues>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JCheckBox" name="availableCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Available"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Disponible&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="availableCheckBoxtypeComboBoxActionPerformed"/>
@@ -480,13 +488,8 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="typeComboBox">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="All"/>
-                <StringItem index="1" value="Studio"/>
-                <StringItem index="2" value="Suite"/>
-                <StringItem index="3" value="Deluxe"/>
-              </StringArray>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;All&quot; })" type="code"/>
             </Property>
           </Properties>
           <Events>
@@ -501,17 +504,23 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Filters:"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Filtres:&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="roomTypeLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Room Type:"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Hotel:&quot;" type="code"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="setAvailableButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Set Available"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Mettre diponisble&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setAvailableButtonActionPerformed"/>
@@ -527,7 +536,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="setUnavailableButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Set Unavailable"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Mettre indisponible&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setUnavailableButtonActionPerformed"/>
@@ -535,7 +546,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="setUnderMaintenanceButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Set Under Maintenance"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Mettre sous Maintenance&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setUnderMaintenanceButtonActionPerformed"/>
@@ -543,7 +556,9 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="unavailableCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Unavailable"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;indisponible&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="unavailableCheckBoxtypeComboBoxActionPerformed"/>
@@ -551,7 +566,9 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="underMaintenanceCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Under Maintenance"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Sous Maintenance&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="underMaintenanceCheckBoxtypeComboBoxActionPerformed"/>
@@ -559,7 +576,9 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="occupiedCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Occupied"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Occup&#xe9;e&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="occupiedCheckBoxtypeComboBoxActionPerformed"/>

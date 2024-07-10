@@ -30,7 +30,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
 
     private String databaseUrl = "jdbc:mysql://localhost:3306/hotel?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private String username = "root";
-    private String password = "";
+    private String password = "wassim123";
     private HotelDatabaseManager hotelDBM = new HotelDatabaseManager(databaseUrl, username, password);
     
     private int booking_id;
@@ -111,7 +111,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         roomsButton.setBackground(new java.awt.Color(88, 73, 16));
         roomsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         roomsButton.setForeground(new java.awt.Color(255, 255, 255));
-        roomsButton.setText("Rooms");
+        roomsButton.setText("Chambres");
         roomsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         roomsButton.setBorderPainted(false);
         roomsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +145,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         logOutButton.setBackground(new java.awt.Color(88, 73, 16));
         logOutButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logOutButton.setText("Logout");
+        logOutButton.setText("Se déconnecter");
         logOutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,7 +161,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         bookingsButton4.setBackground(new java.awt.Color(88, 73, 16));
         bookingsButton4.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         bookingsButton4.setForeground(new java.awt.Color(255, 255, 255));
-        bookingsButton4.setText("Bookings");
+        bookingsButton4.setText("Réservations");
         bookingsButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bookingsButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +172,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         checkInsButtons2.setBackground(new java.awt.Color(88, 73, 16));
         checkInsButtons2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         checkInsButtons2.setForeground(new java.awt.Color(255, 255, 255));
-        checkInsButtons2.setText("Check Ins");
+        checkInsButtons2.setText("Enregistrements");
         checkInsButtons2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         checkInsButtons2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +183,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         billsButton.setBackground(new java.awt.Color(88, 73, 16));
         billsButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         billsButton.setForeground(new java.awt.Color(255, 255, 255));
-        billsButton.setText("Bills");
+        billsButton.setText("Factures");
         billsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         billsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,7 +233,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        staffNameLabel.setText("Hello, " + staff.getFirstName());
+        staffNameLabel.setText("Bonjour, " + staff.getFirstName());
 
         headerPanel6.setBackground(new java.awt.Color(216, 196, 156));
         headerPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -241,7 +241,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         bookingsHeader.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         bookingsHeader.setForeground(new java.awt.Color(88, 73, 16));
         bookingsHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bookingsHeader.setText("BOOKINGS");
+        bookingsHeader.setText("Réservations");
 
         javax.swing.GroupLayout headerPanel6Layout = new javax.swing.GroupLayout(headerPanel6);
         headerPanel6.setLayout(headerPanel6Layout);
@@ -263,7 +263,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         notifLabel.setForeground(new java.awt.Color(255, 102, 102));
         notifLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        confirmCheckInButton.setText("Confirm Check In");
+        confirmCheckInButton.setText("Confirmer l'entrée");
         confirmCheckInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmCheckInButtonActionPerformed(evt);
@@ -271,22 +271,22 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         });
 
         guestNameHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        guestNameHeaderLabel.setText("Guest:");
+        guestNameHeaderLabel.setText("Invitée:");
 
         roomNumberHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        roomNumberHeaderLabel.setText("Room Number:");
+        roomNumberHeaderLabel.setText("Nombre du chambre:");
 
         dateBookedHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        dateBookedHeaderLabel.setText("Date Booked:");
+        dateBookedHeaderLabel.setText("Date réservation:");
 
         checkInDateHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        checkInDateHeaderLabel.setText("Check In Date:");
+        checkInDateHeaderLabel.setText("Date d'entrer:");
 
         checkOutDateHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        checkOutDateHeaderLabel.setText("Check Out Date:");
+        checkOutDateHeaderLabel.setText("Date de sortir :");
 
         totalCostHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        totalCostHeaderLabel.setText("Total Cost:");
+        totalCostHeaderLabel.setText("Coût total:");
 
         issueKeyCardCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,10 +295,10 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
         });
 
         issueKeyCardHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        issueKeyCardHeaderLabel.setText("Issue Key Card:");
+        issueKeyCardHeaderLabel.setText("Émettre une carte-clé:");
 
         arrivalHeaderLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        arrivalHeaderLabel.setText("Arrival:");
+        arrivalHeaderLabel.setText("Arrivée:");
 
         arrivalComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Early", "Late" }));
 
@@ -463,7 +463,7 @@ public class StaffBookingCheckIn extends javax.swing.JFrame {
     private void confirmCheckInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmCheckInButtonActionPerformed
         LocalDate checkinDate = parseDate(this.checkin_date);
         LocalDate checkoutDate = parseDate(this.checkout_date);
-        double totalCost = Double.parseDouble(this.total_cost.replace("₱", ""));
+        double totalCost = Double.parseDouble(this.total_cost.replace("", ""));
 
         LocalDate currentDate = LocalDate.now();
         
